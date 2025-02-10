@@ -64,8 +64,8 @@ public class PredictionServer {
 
     private static double predictSales(int storeCode, int itemCode) throws SQLException {
         String jdbcUrl = "jdbc:mysql://localhost:3306/sales_db";
-        String username = "root";
-        String password = "123akbar#"; // Consider using environment variables instead
+        String username = "username";
+        String password = "password"; 
 
         try (Connection conn = DriverManager.getConnection(jdbcUrl, username, password);
              Statement stmt = conn.createStatement();
