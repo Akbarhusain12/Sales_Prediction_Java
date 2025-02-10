@@ -8,8 +8,8 @@ import java.sql.Statement;
 public class Table {
     public static void main(String[] args) {
         final String url = "jdbc:mysql://localhost:3306/sales_db"; // Local MySQL
-        final String username = "root";
-        final String password = "123akbar#";
+        final String username = "username";
+        final String password = "password";
         Connection connection = null;
         Statement statement = null;
 
