@@ -7,7 +7,7 @@ public class predictor {
     public static void main(String[] args) {
         try (
 
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sales_db", "root", "123akbar#");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sales_db", "username", "password");
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT store_code, item_code, sales FROM Sales")
         ) {
