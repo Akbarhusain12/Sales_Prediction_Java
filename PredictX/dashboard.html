@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Sales Forecasting</h2>
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="upload.html">Upload Data</a></li>
+      <li><a href="index.html">Predictions</a></li>
+      <li><a href="report.html">Reports</a></li>
+      <li><a href="login.html">Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h1>Welcome to Sales Dashboard</h1>
+
+    <div class="stats-container">
+      <div class="stat-box">
+        <h3>Total Sales</h3>
+        <p>$50,000</p>
+      </div>
+      <div class="stat-box">
+        <h3>Growth %</h3>
+        <p>12.5%</p>
+      </div>
+      <div class="stat-box">
+        <h3>Forecasted Revenue</h3>
+        <p>$55,000</p>
+      </div>
+    </div>
+
+    <!-- Sales Forecasting Graph -->
+    <div class="chart-placeholder">
+      <h2>Sales Forecasting Chart</h2>
+      <canvas id="salesChart"></canvas>
+    </div>
+  </main>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const ctx = document.getElementById("salesChart").getContext("2d");
+
+      const salesChart = new Chart(ctx, {
+          type: "line",  // Line chart for sales prediction
+          data: {
+              labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"], // X-Axis Labels (Months)
+              datasets: [{
+                  label: "Predicted Sales",
+                  data: [500, 700, 800, 600, 1100, 1300], // Dummy Data
+                  borderColor: "#007bff",
+                  backgroundColor: "rgba(0, 123, 255, 0.2)",
+                  borderWidth: 2,
+                  tension: 0.3, // Smooth curve
+              }]
+          },
+          options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                  y: {
+                      beginAtZero: true
+                  }
+              }
+          }
+      });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch("http://localhost:8080/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ features: [12, 5, 3, 14, 1, 5000, 5200, 5400, 5100, 5300, 5500] })
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.querySelector(".stat-box p").innerText = "$" + data.prediction.toFixed(2);
+    })
+    .catch(error => console.error("Error:", error));
+});
+
+</script>
+
+</body>
+</html>

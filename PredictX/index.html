@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Prediction</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+<aside class="sidebar">
+    <h2>Sales Forecasting</h2>
+    <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="upload.html">Upload Data</a></li>
+        <li><a href="index.html">Predictions</a></li>
+        <li><a href="report.html">Reports</a></li>
+        <li><a href="login.html">Logout</a></li>
+    </ul>
+</aside>
+<div class="container">
+    <h2>🔮 Sales Prediction System</h2>
+    <label for="storeCode">Store Code:</label>
+    <input type="text" id="storeCode" placeholder="Enter Store Code">
+
+    <label for="itemCode">Item Code:</label>
+    <input type="text" id="itemCode" placeholder="Enter Item Code">
+
+    <button onclick="predictSales()">Predict Sales</button>
+
+    <h3 id="result">Predicted Sales: -</h3>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
