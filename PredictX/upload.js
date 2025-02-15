@@ -11,13 +11,13 @@ function uploadFile() {
     const formData = new FormData();
     formData.append("file", file);
 
-    fetch("http://127.0.0.1:5000/upload", {
+    fetch("http://localhost:8080/upload", {
         method: "POST",
         body: formData
     })
     .then(response => response.json())
     .then(data => {
-        uploadStatus.innerText = `✅ File uploaded! Prediction: ${data.prediction}`;
+        uploadStatus.innerText = `✅ Estimated Sales: ${data.predictedSales} units will be sold. 📦`;
     })
     .catch(error => {
         console.error("Error:", error);
