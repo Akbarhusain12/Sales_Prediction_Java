@@ -6,6 +6,7 @@
     <title>Sales Report</title>
     <link rel="stylesheet" href="report.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> <!-- Included ApexCharts -->
 </head>
 <body>
 <aside class="sidebar">
@@ -20,8 +21,14 @@
 </aside>
 <div class="container">
     <h2>📊 Sales Report</h2>
-    <h3>📈 Sales Trends Over Time</h3>
-    <canvas id="salesChart"></canvas>
+    <h3>Historical Sales Data - 2024</h3>
+    <div id="chart-historical"></div>
+    <hr>
+    <h3>Budget vs Actual Trends - 2024</h3>
+    <div id="chart-budget"></div>
+    <hr>
+    <h3>Product Sales vs Customer Demand</h3>
+    <div id="chart-trends"></div>
 </div>
 
 <script src="report.js"></script>
