@@ -127,8 +127,8 @@ public class PredictionServer {
     // 🔢 Predict using database
     private static double predictSalesFromDB(int storeCode, int itemCode) throws SQLException {
         String jdbcUrl = "jdbc:mysql://localhost:3306/sales_db";
-        String username = "username";
-        String password = "password"; 
+        String username = "root";
+        String password = "123akbar#";
 
         try (Connection conn = DriverManager.getConnection(jdbcUrl, username, password);
              Statement stmt = conn.createStatement();

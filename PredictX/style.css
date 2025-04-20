@@ -1,56 +1,34 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    text-align: center;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
-.container {
-    width: 300px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: auto;
-}
-
-input, button {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
+/* Sidebar */
 .sidebar {
-    width: 235px;
+    width: 250px;
     background: #0056b3;
     color: white;
     height: 100vh;
-    padding: 25px 20px;
+    padding: 20px;
     position: fixed;
     left: 0;
     top: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 30px;
+    gap: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar h2 {
     text-align: left;
     font-size: 22px;
     font-weight: bold;
-    margin: 0;
+    margin-bottom: 10px;
 }
 
 .sidebar ul {
@@ -65,7 +43,6 @@ button:hover {
     text-align: left;
 }
 
-
 .sidebar ul li a {
     color: white;
     text-decoration: none;
@@ -78,4 +55,91 @@ button:hover {
 
 .sidebar ul li a:hover {
     background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 270px; /* Adjusted for sidebar */
+    padding: 20px;
+    width: calc(100% - 270px);
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    text-align: center;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Table Styles */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.styled-table th, .styled-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.styled-table thead {
+    background-color: #0056b3;
+    color: white;
+    font-weight: bold;
+}
+
+.styled-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.styled-table tr:hover {
+    background-color: #ddd;
+    transition: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .styled-table {
+        font-size: 16px;
+    }
 }

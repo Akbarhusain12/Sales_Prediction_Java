@@ -6,9 +6,9 @@
     <title>Sales Prediction</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 </head>
 <body>
+
 <aside class="sidebar">
     <h2>Sales Forecasting</h2>
     <ul>
@@ -19,8 +19,10 @@
         <li><a href="login.html">Logout</a></li>
     </ul>
 </aside>
+
 <div class="container">
     <h2>🔮 Sales Prediction System</h2>
+
     <label for="storeCode">Store Code:</label>
     <input type="text" id="storeCode" placeholder="Enter Store Code">
 
@@ -28,8 +30,63 @@
     <input type="text" id="itemCode" placeholder="Enter Item Code">
 
     <button onclick="predictSales()">Predict Sales</button>
-
     <h3 id="result">Predicted Sales: -</h3>
+
+    <hr>
+
+    <!-- Button to toggle table -->
+    <button onclick="toggleTable()">Show Table</button>
+
+    <!-- Hidden Table -->
+    <div id="tableContainer" class="hidden">
+        <table class="styled-table">
+            <thead>
+            <tr>
+                <th>Store Code</th>
+                <th>Item Code</th>
+                <th>Item Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Store SC101 -->
+            <tr><td rowspan="5">SC101</td><td>IC201</td><td>Apple iPhone 15</td></tr>
+            <tr><td>IC202</td><td>Samsung Galaxy S23</td></tr>
+            <tr><td>IC203</td><td>Google Pixel 8</td></tr>
+            <tr><td>IC204</td><td>MacBook Air M2</td></tr>
+            <tr><td>IC205</td><td>Dell XPS 15 Laptop</td></tr>
+
+            <!-- Store SC102 -->
+            <tr><td rowspan="5">SC102</td><td>IC206</td><td>HP Spectre x360</td></tr>
+            <tr><td>IC207</td><td>Lenovo ThinkPad X1</td></tr>
+            <tr><td>IC208</td><td>Asus ROG Strix Gaming Laptop</td></tr>
+            <tr><td>IC209</td><td>PlayStation 5</td></tr>
+            <tr><td>IC210</td><td>Xbox Series X</td></tr>
+
+            <!-- Store SC103 -->
+            <tr><td rowspan="5">SC103</td><td>IC211</td><td>Nintendo Switch OLED</td></tr>
+            <tr><td>IC212</td><td>Canon EOS R6 Camera</td></tr>
+            <tr><td>IC213</td><td>Sony Alpha A7 IV Camera</td></tr>
+            <tr><td>IC214</td><td>Bose Noise Cancelling Headphones 700</td></tr>
+            <tr><td>IC215</td><td>Apple AirPods Pro 2</td></tr>
+
+            <!-- Store SC104 -->
+            <tr><td rowspan="5">SC104</td><td>IC216</td><td>Samsung Galaxy Watch 6</td></tr>
+            <tr><td>IC217</td><td>Garmin Fenix 7 Smartwatch</td></tr>
+            <tr><td>IC218</td><td>Logitech MX Master 3S Mouse</td></tr>
+            <tr><td>IC219</td><td>Razer BlackWidow V4 Keyboard</td></tr>
+            <tr><td>IC220</td><td>Apple iPad Pro 12.9</td></tr>
+
+            <!-- Store SC105 -->
+            <tr><td rowspan="5">SC105</td><td>IC221</td><td>Samsung Galaxy Tab S9</td></tr>
+            <tr><td>IC222</td><td>Amazon Echo Dot (5th Gen)</td></tr>
+            <tr><td>IC223</td><td>Google Nest Hub Max</td></tr>
+            <tr><td>IC224</td><td>Dyson V15 Vacuum Cleaner</td></tr>
+            <tr><td>IC225</td><td>Philips Hue Smart Light Bulb</td></tr>
+            </tbody>
+        </table>
+
+
+    </div>
 </div>
 
 <script src="script.js"></script>

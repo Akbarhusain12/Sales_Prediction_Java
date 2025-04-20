@@ -1,3 +1,4 @@
+// Function to predict sales
 function predictSales() {
     const storeCode = document.getElementById("storeCode").value.trim();
     const itemCode = document.getElementById("itemCode").value.trim();
@@ -33,4 +34,15 @@ function predictSales() {
         alert("Failed to fetch prediction. Is the server running?");
         resultElement.innerHTML = "<b>Error fetching prediction.</b>";
     });
+}
+
+// Function to toggle table visibility
+function toggleTable() {
+    let tableContainer = document.getElementById("tableContainer");
+
+    if (tableContainer.style.display === "none" || tableContainer.style.display === "") {
+        tableContainer.style.display = "block";
+    } else {
+        tableContainer.style.display = "none";
+    }
 }

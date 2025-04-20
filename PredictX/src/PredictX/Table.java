@@ -18,7 +18,6 @@ public class Table {
             connection = DriverManager.getConnection(url, username, password);
             System.out.println("✅ Connection to MySQL successful!");
 
-            // Query to fetch data from the Sales table
             String query = "SELECT * FROM Sales LIMIT 3";
             statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
